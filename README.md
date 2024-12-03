@@ -4,26 +4,25 @@
 <h4 align="center">An unofficial python wrapper for the <a href="https://www.wienernetze.at/smartmeter" target="_blank">Wiener Netze Smart Meter</a> private API.
 </h4>
 
-[![PyPI Version](https://img.shields.io/pypi/v/vienna-smartmeter)](https://pypi.org/project/vienna-smartmeter/)
-[![Build](https://github.com/platysma/vienna-smartmeter/actions/workflows/build.yml/badge.svg)](https://github.com/platysma/vienna-smartmeter/actions/workflows/build.yml)
-[![Code Coverage](https://codecov.io/gh/platysma/vienna-smartmeter/branch/main/graph/badge.svg)](https://codecov.io/gh/platysma/vienna-smartmeter)
-[![Code Quality](https://api.codeclimate.com/v1/badges/3130fa0ba3b7993fbf0a/maintainability)](https://codeclimate.com/github/platysma/vienna-smartmeter)
+## Fork
+
+This is a fork of https://github.com/platysma/vienna-smartmeter
+As the original Repo is broken and no longer maintained, I try to keep on track with API-changes of Wiener Netze.
+- async-client is currently not maintained and most likely broken
+- additional endpoints have been added (as the Wiener Netze API changed)
+- possible future developement: Wiener Netze offers an Endpoint named "Benachrichtigungen". This is currently not implemented
 
 ## Features
 
 - Access energy usage for specific meters
 - Get profile information
-- View, edit & delete events (Ereignisse)
+- View, create & delete events (Ereignisse)
 
 ## Installation
 
 Install with pip:
 
-`pip install vienna-smartmeter`
-
-An async package is provided and can be installed with the 'async' extra:
-
-`pip install vienna-smartmeter[async]`
+`pip install 'vienna-smartmeter @ git+https://github.com/fleinze/vienna-smartmeter.git'`
 
 ## How To Use
 
@@ -39,13 +38,6 @@ api = Smartmeter(username, password)
 print(api.profil())
 ```
 
-The asnyc package can be imported by replacing Smartmeter with AsyncSmartmeter.
-
-```python
-from vienna_smartmeter import AsyncSmartmeter
-
-```
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -53,8 +45,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Make sure to add or update tests as appropriate.
 
 ## License
-
-> You can check out the full license [here](https://github.com/platysma/vienna-smartmeter/blob/main/LICENSE)
 
 This project is licensed under the terms of the **MIT** license.
 
